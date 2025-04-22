@@ -5,20 +5,29 @@ import React, { useState } from "react";
 import MenuComp from "./Menu";
 import Image from "next/image";
 
+
+
 function Header() {
-  // const [anchorEl, setAnchorEl] = useState(null);
-  //      const open = Boolean(anchorEl);
-  //      const handleClick = (event) => {
-  //        setAnchorEl(event.currentTarget);
-  //      };
-  //      const handleClose = () => {
-  //        setAnchorEl(null);
-  //      };
+const handleScrollToSection = (id, offset= 80) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const yOffset = -offset;
+    const y =
+      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+};
+
+
+    
+  
 
   return (
     <nav className="py-4 relative z-50 ">
-    
-
       <div className="px-20 flex relative justify-start gap-56 items-center">
         {/* Logo */}
         <div className="text-nowrap">
@@ -33,31 +42,84 @@ function Header() {
         {/* TABS */}
         <div className="text-white  flex justify-center items-center gap-5">
           <a
-            href="home"
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("home", 100);
+            }}
             className="hover:bg-white hover:text-dark_text text-phover:text-dark_text rounded-full px-3 py-2"
           >
             <span className="">Home</span>
           </a>
-          <a className="hover:bg-white rounded-full hover:text-dark_text px-3 py-2 ">
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("about", 100);
+            }}
+            className="hover:bg-white rounded-full hover:text-dark_text px-3 py-2 "
+          >
             <MenuComp text="About us" />
           </a>
           <a
-            href="home"
+            href="#cta"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("cta", 100); // 100px offset (e.g., navbar height)
+            }}
             className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2 "
           >
             <MenuComp text="Admissions" />
           </a>
           <a
-            href="home"
+            href="#programms"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("programms", 100); // 100px offset (e.g., navbar height)
+            }}
             className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2"
           >
-            <span className="">Opportunities</span>
+            <span className="">Programms</span>
           </a>
           <a
-            href="home"
+            href="#form"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("form", 100); // 100px offset (e.g., navbar height)
+            }}
             className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2"
           >
-            <span className="">Contact us</span>
+            <span className="">Contact Us</span>
+          </a>
+          <a
+            href="#faq"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("faq", 100); // 100px offset (e.g., navbar height)
+            }}
+            className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2"
+          >
+            <span className="">FAQs</span>
+          </a>
+          <a
+            href="#why"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("why", 100); // 100px offset (e.g., navbar height)
+            }}
+            className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2"
+          >
+            <span className="">Facilities</span>
+          </a>
+          <a
+            href="#links"
+            onClick={(e) => {
+              e.preventDefault();
+              handleScrollToSection("links", 100); // 100px offset (e.g., navbar height)
+            }}
+            className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2"
+          >
+            <span className="">Links</span>
           </a>
         </div>
       </div>
