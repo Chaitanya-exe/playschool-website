@@ -27,7 +27,7 @@ async function handler(req){
                 number: payload.number
             }
         });
-        return NextResponse.json({msg:"Query recieved" , result}, {status:201});
+        return NextResponse.json({msg:"Query recieved" , result, success:true}, {status:201});
     } catch (err) {
         console.log(`${err.message}`)
         return NextResponse.json({error:"some error occured"},{status: 500});

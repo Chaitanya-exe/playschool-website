@@ -8,12 +8,12 @@ import { IconButton, Snackbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Form = () => {
-  const [query, setQuery] = useState({
+  const [payload, setPayload] = useState({
     name: "",
     number: "",
     email: "",
     type: "",
-    inquiry: "",
+    query: "",
   });
   const [querySent, setQuerySent] = useState(false);
   const [queryduplicate, setQueryDuplicate] = useState(false);
@@ -29,7 +29,7 @@ const Form = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...query }),
+        body: JSON.stringify({ payload }),
       });
       const data = await response.json();
       alert(data.msg);
@@ -93,8 +93,8 @@ const Form = () => {
               type="text"
               id="name"
               name="Name"
-              value={query.name}
-              onChange={(e) => setQuery({ ...query, name: e.target.value })}
+              value={payload.name}
+              onChange={(e) => setPayload({ ...payload, name: e.target.value })}
               placeholder="Full Name"
               className="capitalize w-full outline-none bg-transparent px-2"
             />
@@ -105,8 +105,8 @@ const Form = () => {
               type="text"
               id="number"
               name="number"
-              value={query.number}
-              onChange={(e) => setQuery({ ...query, number: e.target.value })}
+              value={payload.number}
+              onChange={(e) => setPayload({ ...payload, number: e.target.value })}
               placeholder="Phone Number"
               className="w-full outline-none bg-transparent px-2"
             />
@@ -119,8 +119,8 @@ const Form = () => {
               type="email"
               id="email"
               name="email"
-              value={query.email}
-              onChange={(e) => setQuery({ ...query, email: e.target.value })}
+              value={payload.email}
+              onChange={(e) => setPayload({ ...payload, email: e.target.value })}
               placeholder="Email"
               className="w-full outline-none bg-transparent px-2"
             />
@@ -132,10 +132,10 @@ const Form = () => {
               defaultValue=""
               className="w-full capitalize bg-transparent *:border-b *:border-text p-3 h-full focus:outline-none"
               onChange={(e) =>
-                setQuery({ ...query, type: e.target.value.toUpperCase() })
+                setPayload({ ...payload, type: e.target.value.toUpperCase() })
               }
             >
-              <option value={query.type} disabled hidden className="">
+              <option value={payload.type} disabled hidden className="">
                 Type of inquiry
               </option>
               <option value="Admission" className=" *:hover:font-semibold">
@@ -147,7 +147,7 @@ const Form = () => {
               <option value="Facilities" className=" *:hover:font-semibold">
                 Facilities
               </option>
-              <option value="Programms" className=" *:hover:font-semibold">
+              <option value="Programs" className=" *:hover:font-semibold">
                 Programms
               </option>
               <option value="other" className=" *:hover:font-semibold">
@@ -161,10 +161,10 @@ const Form = () => {
             rows={5}
             id="inquiry"
             name="inquiry"
-            value={query.inquiry}
+            value={payload.query}
             onChange={(e) => {
-              console.log(query);
-              setQuery({ ...query, inquiry: e.target.value });
+              console.log(payload);
+              setPayload({ ...payload, query: e.target.value });
             }}
             placeholder="Tell us more about your needs or questions.."
             className="w-full  outline-none bg-transparent px-2"
