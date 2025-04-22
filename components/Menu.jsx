@@ -1,19 +1,17 @@
-import React from 'react'
-import Button from "@mui/material/Button";
+import React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-
-function MenuComp({text}) {
-     const [anchorEl, setAnchorEl] = React.useState(null);
-     const open = Boolean(anchorEl);
-     const handleClick = (event) => {
-       setAnchorEl(event.currentTarget);
-     };
-     const handleClose = () => {
-       setAnchorEl(null);
-     };
+function MenuComp({ text }) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div>
       <button
@@ -24,6 +22,7 @@ function MenuComp({text}) {
         onClick={handleClick}
       >
         {text}
+        <ArrowDropDownIcon />
       </button>
 
       <Menu
@@ -32,13 +31,21 @@ function MenuComp({text}) {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem className='hover:bg-red-200' onClick={handleClose}>Vsion & mission</MenuItem>
-        <MenuItem className='hover:bg-red-200' onClick={handleClose}>legacy</MenuItem>
-        <MenuItem className='hover:bg-red-200' onClick={handleClose}>Awards</MenuItem>
-        <MenuItem className='hover:bg-red-200' onClick={handleClose}>Advantage</MenuItem>
+        <MenuItem className="hover:bg-red-200" onClick={handleClose}>
+          Vsion & mission
+        </MenuItem>
+        <MenuItem className="hover:bg-red-200" onClick={handleClose}>
+          legacy
+        </MenuItem>
+        <MenuItem className="hover:bg-red-200" onClick={handleClose}>
+          Awards
+        </MenuItem>
+        <MenuItem className="hover:bg-red-200" onClick={handleClose}>
+          Advantage
+        </MenuItem>
       </Menu>
     </div>
   );
 }
 
-export default MenuComp
+export default MenuComp;

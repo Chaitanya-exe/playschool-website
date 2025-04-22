@@ -11,7 +11,8 @@ import Image from "next/image";
 
 function Footer() {
   return (
-    <section className="relative bg-gradient-to-t from-p_red to-p_yellow overflow-hidden mt-10 py-28 text-p_white">
+    <section 
+    id="links" className="relative bg-gradient-to-t from-p_red to-p_yellow overflow-hidden mt-10 py-28 text-p_white">
       <div className="w-full bottom-0 absolute ">
         <img
           src="/svg/wave.svg"
@@ -67,11 +68,11 @@ function Footer() {
         <div className="">
           <h2 className="heading text-[24px]"> Quick Links</h2>
           <div className="space-y-1 para flex flex-col capitalize *:space-x-2">
-            <a href="/">home</a>
-            <a href="/">About</a>
-            <a href="/">Programms</a>
-            <a href="/">form</a>
-            <a href="/">faqs</a>
+            <a href="#home">home</a>
+            <a href="#about">About</a>
+            <a href="#programms">Programms</a>
+            <a href="#form">form</a>
+            <a href="#faq">faqs</a>
           </div>
         </div>
         {/* 4 */}

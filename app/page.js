@@ -5,8 +5,10 @@ import Image from "next/image";
 import React from "react";
 
 export default function Home() {
+
+  
   return (
-    <section id="#home" className="relative -mt-24 pt-48 pb-10  ">
+    <main  className="relative -mt-24 pt-48 pb-10  ">
       {/* WAVES nd svgs */}
       <div className="w-full rotate-180 top-0 absolute">
         <img
@@ -17,7 +19,7 @@ export default function Home() {
           className="w-full h-full" // Increased height
         />
       </div>
-      <div className="w-full top-40 -z-10 absolute">
+      <div  className="w-full top-40 -z-10 absolute">
         <img
           src="/svg/wave2.svg"
           width={1000}
@@ -47,7 +49,7 @@ export default function Home() {
 
       {/* Hero */}
 
-      <div className="max-w-[85vw]  mx-28 relative  flex flex-col md:flex-row justify-between gap-16">
+      <section id="home" className="max-w-[85vw]  mx-28 relative  flex flex-col md:flex-row justify-between gap-16">
         {/* Text Content */}
         <div className="max-w-[550px] text-p_white text-center md:text-left">
           <h1 className="heading text-5xl">
@@ -73,10 +75,10 @@ export default function Home() {
         <div>
           <img src={"/images/heroImg.png"} />
         </div>
-      </div>
+      </section>
 
       {/* ABOUT US */}
-      <div className="flex flex-row-reverse justify-center gap-32 mx-40 my-24 relative">
+      <section id="about" className="flex flex-row-reverse justify-center gap-32 mx-40 my-24 relative">
         <Image
           src={"/svg/PaintBrush.svg"}
           width={"70"}
@@ -133,10 +135,11 @@ export default function Home() {
             className="w-[550px] -z-10 absolute top-4"
           />
         </div>
-      </div>
+      </section>
 
       {/* PROGRAMMS */}
-      <div className="my-28 relative text-p_red text-center">
+      <section 
+      id="programms" className="my-28 relative text-p_red text-center">
         <h1 className="heading pb-3 text-5xl">Programms</h1>
         <Image
           src={"/svg/Park Swing.svg"}
@@ -203,11 +206,11 @@ export default function Home() {
             <ProgramCard key={card.id} card={card} id={card.id} />
           ))}
         </div>
-      </div>
+      </section>
 
       {/* WHY */}
 
-      <div className="my-20 relative text-p_red text-center">
+      <section id="why" className="my-20 relative text-p_red text-center">
         <h1 className="heading pb-3 text-5xl capitalize">why choose us</h1>
         <h2 className="sub-heading text-lg ">
           A nurturing start makes all the difference. Here’s why parents trust
@@ -321,10 +324,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* FAQs */}
-      <div className="space-y-4 my-20 relative">
+      <section id="faq" className="space-y-4 my-20 relative">
         <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
           FAQs
         </h1>
@@ -360,10 +363,10 @@ export default function Home() {
             "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
           }
         />
-      </div>
+      </section>
 
       {/* CTA */}
-      <div className="relative flex flex-col items-center min-h-96 my-20 bg-green-5">
+      <section id="cta" className="relative flex flex-col items-center min-h-96 my-20 bg-green-5">
         <Image
           src={"/svg/3wave.svg"}
           // src={"/svg/bottom-wave.svg"}
@@ -395,10 +398,10 @@ export default function Home() {
             Apply for Admission
           </button>
         </div>
-      </div>
+      </section>
 
       {/* FORM */}
-      <div className="bg- relative py-10">
+      <section id="form" className="bg- relative py-10">
         <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
           Ask your queries
         </h1>
@@ -418,7 +421,8 @@ export default function Home() {
           alt="cubes"
           className="absolute top-5 opacity-65  right-0 rotate-6"
         />
-      </div>
-    </section>
+      </section>
+      
+    </main>
   );
 }
