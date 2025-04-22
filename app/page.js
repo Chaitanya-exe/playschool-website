@@ -1,3 +1,4 @@
+import AccordionUsage from "@/components/AccordianComp";
 import Form from "@/components/Form";
 import ProgramCard from "@/components/ProgramCard";
 import Image from "next/image";
@@ -6,7 +7,7 @@ import React from "react";
 export default function Home() {
   return (
     <section id="#home" className="relative -mt-24 pt-48 pb-10  ">
-    {/* WAVES nd svgs */}
+      {/* WAVES nd svgs */}
       <div className="w-full rotate-180 top-0 absolute">
         <img
           src="/svg/wave.svg"
@@ -322,6 +323,45 @@ export default function Home() {
         </div>
       </div>
 
+      {/* FAQs */}
+      <div className="space-y-4 my-20 relative">
+        <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
+          FAQs
+        </h1>
+        <Image
+          src={"/images/family.png"}
+          width={200}
+          height={200}
+          alt="cubes"
+          className="absolute bottom-10 opacity-60  right-12"
+        />
+
+        <AccordionUsage
+          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ans={
+            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+          }
+        />
+        <AccordionUsage
+          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ans={
+            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+          }
+        />
+        <AccordionUsage
+          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ans={
+            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+          }
+        />
+        <AccordionUsage
+          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ans={
+            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+          }
+        />
+      </div>
+
       {/* CTA */}
       <div className="relative flex flex-col items-center min-h-96 my-20 bg-green-5">
         <Image
@@ -332,8 +372,12 @@ export default function Home() {
           alt="paintbrush"
           className="absolute w-full left-0 bottom-29 opacity-65"
         />
-        <div className="absolute top-28 left-48  para text-xl text-white bg-p_yellow p-4 rounded-2xl -rotate-12">Call Us: +91-9876543210</div>
-        <div className="absolute top-28 right-48 heading text-6xl bg-white rounded-full p-6 w-[90px] flex justify-center items-center h-[90px] text-p_blue font-bold">+</div>
+        <div className="absolute top-28 left-48  para text-xl text-white bg-p_yellow p-4 rounded-2xl -rotate-12">
+          Call Us: +91-9876543210
+        </div>
+        <div className="absolute top-28 right-48 heading text-6xl bg-white rounded-full p-6 w-[90px] flex justify-center items-center h-[90px] text-p_blue font-bold">
+          +
+        </div>
         <Image
           src={"/images/grp.png"}
           width={"700"}
@@ -354,7 +398,27 @@ export default function Home() {
       </div>
 
       {/* FORM */}
-      <Form />
+      <div className="bg- relative py-10">
+        <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
+          Ask your queries
+        </h1>
+
+        <Form />
+        <Image
+          src={"/images/Alphabet Cubes.png"}
+          width={200}
+          height={200}
+          alt="cubes"
+          className="absolute bottom-5 opacity-60  left-12"
+        />
+        <Image
+          src={"/images/kids.png"}
+          width={200}
+          height={200}
+          alt="cubes"
+          className="absolute top-5 opacity-65  right-0 rotate-6"
+        />
+      </div>
     </section>
   );
 }
