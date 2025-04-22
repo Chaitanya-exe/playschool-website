@@ -1,14 +1,35 @@
+"use client";
+
 import AccordionUsage from "@/components/AccordianComp";
 import Form from "@/components/Form";
 import ProgramCard from "@/components/ProgramCard";
 import Image from "next/image";
 import React from "react";
+import { animate, motion, stagger } from "framer-motion";
+import { duration } from "@mui/material";
+
+export const yVariant = {
+  initial: {
+    opacity: 0,
+    y: 40,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 60,
+      damping: 12,
+      mass: 0.8,
+      duration: 0.6,
+      staggerChildren: 0.2, // applies if used on a parent motion.div
+    },
+  },
+};
 
 export default function Home() {
-
-  
   return (
-    <main  className="relative -mt-24 pt-48 pb-10  ">
+    <main className="relative -mt-24 pt-48 pb-10  ">
       {/* WAVES nd svgs */}
       <div className="w-full rotate-180 top-0 absolute">
         <img
@@ -19,7 +40,7 @@ export default function Home() {
           className="w-full h-full" // Increased height
         />
       </div>
-      <div  className="w-full top-40 -z-10 absolute">
+      <div className="w-full top-40 -z-10 absolute">
         <img
           src="/svg/wave2.svg"
           width={1000}
@@ -49,9 +70,26 @@ export default function Home() {
 
       {/* Hero */}
 
-      <section id="home" className="max-w-[85vw]  mx-28 relative  flex flex-col md:flex-row justify-between gap-16">
+      <section
+        id="home"
+        className="max-w-[85vw]  mx-28 relative  flex flex-col md:flex-row justify-between gap-16"
+      >
         {/* Text Content */}
-        <div className="max-w-[550px] text-p_white text-center md:text-left">
+        <motion.div
+          initial={{
+            opacity: 0,
+            x: -100,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          }}
+          className="max-w-[550px] text-p_white text-center md:text-left"
+        >
           <h1 className="heading text-5xl">
             Build Stunning Websites with Ease
           </h1>
@@ -69,7 +107,7 @@ export default function Home() {
               Learn More
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Image */}
         <div>
@@ -78,7 +116,10 @@ export default function Home() {
       </section>
 
       {/* ABOUT US */}
-      <section id="about" className="flex flex-row-reverse justify-center gap-32 mx-40 my-24 relative">
+      <section
+        id="about"
+        className="flex flex-row-reverse justify-center gap-32 mx-40 my-24 relative"
+      >
         <Image
           src={"/svg/PaintBrush.svg"}
           width={"70"}
@@ -94,9 +135,19 @@ export default function Home() {
           className="absolute  -left-16 top-10 opacity-70"
         />
 
-        <div className="w-[800px]">
-          <h1 className="heading pb-3 text-p_red text-5xl">About us</h1>
-          <div>
+        <motion.div
+          variants={yVariant}
+          initial="initial"
+          whileInView="animate"
+          className="w-[800px]"
+        >
+          <motion.h1
+            variants={yVariant}
+            className="heading pb-3 text-p_red text-5xl"
+          >
+            About us
+          </motion.h1>
+          <motion.div variants={yVariant}>
             <h2 className="sub-heading text-2xl py-2">
               Welcome to{" "}
               <span className="font-[700px] text-[20px] text-p_yello outlin py-0.5 px-1 rounded text-white bg-p_yellow rotate-6">
@@ -122,10 +173,20 @@ export default function Home() {
               </li>
               <li>🧩 Small class sizes for personalized attention </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="relative bg-green-20 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0 , scale:0.6}}
+          whileInView={{
+            opacity: 1,
+            scale:1,
+            transition: {
+              duration: 0.8,
+            },
+          }}
+          className="relative bg-green-20 flex items-center justify-center"
+        >
           <img src={"/images/aboutimg.png"} className="w-[500px] " />
           <Image
             width={"900"}
@@ -134,12 +195,11 @@ export default function Home() {
             src={"/svg/blob1.svg"}
             className="w-[550px] -z-10 absolute top-4"
           />
-        </div>
+        </motion.div>
       </section>
 
       {/* PROGRAMMS */}
-      <section 
-      id="programms" className="my-28 relative text-p_red text-center">
+      <section id="programms" className="my-28 relative text-p_red text-center">
         <h1 className="heading pb-3 text-5xl">Programms</h1>
         <Image
           src={"/svg/Park Swing.svg"}
@@ -366,7 +426,10 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="relative flex flex-col items-center min-h-96 my-20 bg-green-5">
+      <section
+        id="cta"
+        className="relative flex flex-col items-center min-h-96 my-20 bg-green-5"
+      >
         <Image
           src={"/svg/3wave.svg"}
           // src={"/svg/bottom-wave.svg"}
@@ -389,15 +452,23 @@ export default function Home() {
           className="relative z-10"
         />
 
-        <div className="sub-heading text-xl max-w-3xl text-center relative">
-          <h2>
+        <motion.div
+          variants={yVariant}
+          initial="initial"
+          whileInView="animate"
+          className="sub-heading text-xl max-w-3xl text-center relative"
+        >
+          <motion.h2 variants={yVariant}>
             Give your little one the perfect start with fun-filled activities,
             caring educators, and a nurturing environment that feels like home.
-          </h2>
-          <button className="px-6 py-3 my-3 bg-blue-400 hover:bg-blue-500 text-p_white font-semibold rounded-xl transition">
+          </motion.h2>
+          <motion.button
+            variants={yVariant}
+            className="px-6 py-3 my-3 bg-blue-400 hover:bg-blue-500 text-p_white font-semibold rounded-xl transition"
+          >
             Apply for Admission
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       {/* FORM */}
@@ -422,7 +493,6 @@ export default function Home() {
           className="absolute top-5 opacity-65  right-0 rotate-6"
         />
       </section>
-      
     </main>
   );
 }
