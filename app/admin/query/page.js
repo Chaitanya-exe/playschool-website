@@ -21,7 +21,7 @@ function Row(props) {
   const [open, setOpen] = React.useState(false);
   const date = new Date(row.createdAt);
 
-  console.log("date", date);
+  console.log("date", row);
 
   return (
     <React.Fragment>
@@ -62,7 +62,7 @@ function Row(props) {
               <div>
                 <h1 className="md:text-lg font-[550]">Inquiries :-</h1>
                 <div className="flex flex-col md:text-[15px] text-wrap gap-1 tracking-wide my-2 *:bg-cardBg/40 *:py-2 *:px-3  *:capitalize ">
-                  {row.inquiry.map((historyRow, i) => (
+                  {row.queries.map((historyRow, i) => (
                     <p key={i} className="max-w-[700px]">{historyRow}</p>
                   ))}
                 </div>
