@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@/app/generated/prisma";
+import { PrismaClient, Type } from "@/app/generated/prisma";
 
 async function handler(req){
     const userClient = new PrismaClient({
@@ -9,23 +9,22 @@ async function handler(req){
         const {payload} = await req.json();
         const result = await userClient.query.upsert({
             create:{
+                name: payload.name,
                 email: payload.email,
-                    name: payload.name,
-                    number:payload.number,
-                    type:{
-                        push: payload.type
-                    },
-                    queries:{
-                        push: payload.query
-                }
+                number: payload.number,
+                type:[payload.type] ? [payload.type] : [],
             },
             update:{
-                queries: payload.query ? [payload.query] : [],
-                type : payload.type ? [payload.type] : []
+                type:{
+                    push: payload.type
+                },
+                queries:{
+                    push: payload.query
+                }
             },
             where:{
-                number: payload.number,
-                email: payload.email
+                email: payload.email,
+                number: payload.number
             }
         });
         return NextResponse.json({msg:"Query recieved" , result}, {status:201});
