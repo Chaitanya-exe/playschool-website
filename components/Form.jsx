@@ -66,7 +66,7 @@ const Form = () => {
   );
 
   return (
-    <div className="outline-dotted outline-8 outline-offset-8 outline-pink-300/60   bg-gradient-to-b from-p_red/30 to-p_yellow/70 pb-10 h-full md:mx-72 px-6 mx-4 md:px-12 rounded-[30px] ">
+    <div className="outline-dotted outline-8 outline-offset-8 outline-pink-300/60   bg-gradient-to-b from-p_red/30 to-p_yellow/7f0 pb-10 h-full md:mx-72 px-6 mx-4 md:px-12 rounded-[30px] ">
     
       <form
         className={`*:my-2  content-center pt-2 md:pt-6 md:w-full mx-auto  `}
