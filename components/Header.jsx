@@ -4,34 +4,29 @@ import { Button } from "@mui/material";
 import React, { useState } from "react";
 import MenuComp from "./Menu";
 import Image from "next/image";
-
-
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 function Header() {
-const handleScrollToSection = (id, offset= 80) => {
-  const element = document.getElementById(id);
-  if (element) {
-    const yOffset = -offset;
-    const y =
-      element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  const handleScrollToSection = (id, offset = 80) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -offset;
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
-    });
-  }
-};
-
-
-    
-  
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <nav className="py-4 relative z-50 ">
-      <div className="px-20 flex relative justify-start gap-56 items-center">
+      <div className="md:px-20 px-4 flex relative justify-start gap-56 items-center">
         {/* Logo */}
         <div className="text-nowrap">
-          <p className="heading text-[44px] relative -rotate-2">
+          <p className="heading md:text-[44px] text-[24px] relative -rotate-2">
             Rising Star{" "}
             <span className="absolute text-p_yellow -z-10 left-2 text-nowrap ">
               Rising star
@@ -40,7 +35,7 @@ const handleScrollToSection = (id, offset= 80) => {
         </div>
 
         {/* TABS */}
-        <div className="text-white  flex justify-center items-center gap-5">
+        <div className="text-white max-sm:hidden   flex justify-center items-center gap-5">
           <a
             href="#home"
             onClick={(e) => {
@@ -59,7 +54,9 @@ const handleScrollToSection = (id, offset= 80) => {
             }}
             className="hover:bg-white rounded-full hover:text-dark_text px-3 py-2 "
           >
-            <MenuComp text="About us" />
+            {/* <MenuComp text="About us" /> */}
+            About us
+            <ArrowDropDownIcon />
           </a>
           <a
             href="#cta"
@@ -69,7 +66,9 @@ const handleScrollToSection = (id, offset= 80) => {
             }}
             className="hover:bg-white hover:text-dark_text rounded-full px-3 py-2 "
           >
-            <MenuComp text="Admissions" />
+            {/* <MenuComp text="Admissions" /> */}
+            Admissions
+            <ArrowDropDownIcon />
           </a>
           <a
             href="#programms"
@@ -128,4 +127,3 @@ const handleScrollToSection = (id, offset= 80) => {
 }
 
 export default Header;
-

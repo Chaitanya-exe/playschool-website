@@ -5,14 +5,14 @@ function ProgramCard({ card, id }) {
   return (
     <div
       key={id}
-      className="text-dark_text hover:-translate-y-3 transition duration-150 hover:shadow-md ease-in-out bg-p_white shadow max-w-[310px] rounded-lg flex flex-col overflow-hidden"
+      className="text-dark_text hover:-translate-y-3 transition duration-150 hover:shadow-md ease-in-out bg-p_white shadow md:max-w-[310px] rounded-lg flex flex-col overflow-hidden"
     >
       <Image
         src={card.image}
         width={"300"}
         height={"300"}
         alt="img"
-        className="w-full"
+        className="w-full max-sm:h-[180px] object-cover object-center"
       />
       <div className="bg-p_white mx-auto -mt-10 w-32 h-32 rounded-full">
         <Image
