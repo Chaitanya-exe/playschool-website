@@ -12,7 +12,7 @@ import Image from "next/image";
 function Footer() {
   return (
     <section 
-    id="links" className="relative bg-gradient-to-t from-p_red to-p_yellow overflow-hidden mt-10 py-28 text-p_white">
+    id="links" className="relative bg-gradient-to-t from-p_red to-p_yellow overflow-hidden mt-10 md:py-28 py-10  text-p_white">
       <div className="w-full bottom-0 absolute ">
         <img
           src="/svg/wave.svg"
@@ -23,7 +23,7 @@ function Footer() {
         />
       </div>
 
-      <div className="relative   md:flex-row bg-orane-400 textp_white  md:px-28 flex flex-col justify-between *:max-w-[340px]">
+      <div className="relative   md:flex-row bg-orane-400 textp_white  md:px-28 flex flex-col items-center justify-between *:max-w-[340px]">
         {/* 1 */}
         <div>
           <h2 className="heading text-[24px]"> About Us</h2>
@@ -65,7 +65,7 @@ function Footer() {
           </div>
         </div>
         {/* 3 */}
-        <div className="">
+        <div className="max-sm:w-full">
           <h2 className="heading text-[24px]"> Quick Links</h2>
           <div className="space-y-1 para flex flex-col capitalize *:space-x-2">
             <a href="#home">home</a>
@@ -76,7 +76,7 @@ function Footer() {
           </div>
         </div>
         {/* 4 */}
-        <div className="para">
+        <div className="para max-sm:w-full">
           <h2 className="heading text-[24px]">Stay Connected</h2>
           <div className="space-y-1 flex flex-col capitalize *:space-x-2">
             <a href="/">

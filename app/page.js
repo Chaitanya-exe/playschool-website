@@ -29,42 +29,42 @@ export const yVariant = {
 
 export default function Home() {
   return (
-    <main className="relative -mt-24 pt-48 pb-10  ">
+    <main className="relative -mt-24 pt-0 md:pt-48 pb-10 overflow-x-hidden  ">
       {/* WAVES nd svgs */}
-      <div className="w-full rotate-180 top-0 absolute">
+      <div className="w-full  bg-red-40 rotate-180 -top-8 md:top-0 absolute">
         <img
           src="/svg/wave.svg"
           width={1200}
           height={1200}
           alt="wave-svg"
-          className="w-full h-full" // Increased height
+          className="w-full h-full"
         />
       </div>
-      <div className="w-full top-40 -z-10 absolute">
+      <div className="w-full md:top-36 max-sm:top-0 -z-10 absolute">
         <img
           src="/svg/wave2.svg"
           width={1000}
           height={1200}
           alt="wave-svg"
-          className="w-full h-full" // Increased height
+          className="w-full h-full"
         />
       </div>
-      <div className="-rotate-12 top-[330px] left-[25vw]  absolute">
+      <div className="-rotate-12 top-[400px] md:top-[330px] left-3 md:left-[25vw] absolute">
         <img
           src="/svg/Bus.svg"
           width={120}
           height={200}
           alt="wave-svg"
-          className="w- -full opacity-70" // Increased height
+          className="max-sm:w-[85px] opacity-70" // Increased height
         />
       </div>
-      <div className="rotate-12 top-60 right-20 absolute">
+      <div className="rotate-12 max-sm:hidden md:top-60 md:right-20 absolute">
         <img
           src="/svg/letterF.svg"
           width={100}
           height={200}
           alt="wave-svg"
-          className="" // Increased height
+          className="max-sm:w-[40px]"
         />
       </div>
 
@@ -72,7 +72,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="max-w-[85vw]  mx-28 relative  flex flex-col md:flex-row justify-between gap-16"
+        className="md:max-w-[85vw] max-sm:-z-40 max-sm:py-32 max-sm:bg-orange-400/90  md:mx-28 px-6 relative  flex flex-col md:flex-row justify-between gap-10 md:gap-16"
       >
         {/* Text Content */}
         <motion.div
@@ -90,7 +90,7 @@ export default function Home() {
           }}
           className="max-w-[550px] text-p_white text-center md:text-left"
         >
-          <h1 className="heading text-5xl">
+          <h1 className="heading md:text-5xl max-sm:text-4xl">
             Build Stunning Websites with Ease
           </h1>
           <p className="mt-3 text-lg sub-heading">
@@ -99,7 +99,7 @@ export default function Home() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="mt-6 flex  flex-row gap-4 justify-center md:justify-start">
             <button className="px-6 py-3 bg-p_yello bg-p_blu bg-blue-400 hover:bg-blue-500 text-p_white font-semibold rounded-xl transition">
               Get Started
             </button>
@@ -110,52 +110,52 @@ export default function Home() {
         </motion.div>
 
         {/* Image */}
-        <div>
-          <img src={"/images/heroImg.png"} />
+        <div className="max-sm:absolute right-0 top-96 max-sm:-z-20">
+          <img src={"/images/heroImg.png"} className="max-sm:w-[250px] " />
         </div>
       </section>
 
       {/* ABOUT US */}
       <section
         id="about"
-        className="flex flex-row-reverse justify-center gap-32 mx-40 my-24 relative"
+        className="flex md:flex-row-reverse flex-col justify-center gap-10 md:gap-32 mx-4 md:mx-40 my-24 relative"
       >
         <Image
           src={"/svg/PaintBrush.svg"}
           width={"70"}
           height={"100"}
           alt="paintbrush"
-          className="absolute right-0 rotate-12 bottom-12 opacity-65"
+          className="absolute max-sm:w-[50px] right-0 rotate-12 md:bottom-12 bottom-0 opacity-65"
         />
         <Image
           src={"/svg/cookies.svg"}
           width={"80"}
           height={"100"}
           alt="paintbrush"
-          className="absolute  -left-16 top-10 opacity-70"
+          className="absolute max-sm:w-[50px] right-0  md:-left-16 md:top-10 top-0 opacity-70"
         />
 
         <motion.div
           variants={yVariant}
           initial="initial"
           whileInView="animate"
-          className="w-[800px]"
+          className="md:w-[800px]"
         >
           <motion.h1
             variants={yVariant}
-            className="heading pb-3 text-p_red text-5xl"
+            className="heading md:pb-3 text-p_red text-4xl md:text-5xl"
           >
             About us
           </motion.h1>
           <motion.div variants={yVariant}>
-            <h2 className="sub-heading text-2xl py-2">
+            <h2 className="sub-heading text-2xl md:py-2">
               Welcome to{" "}
-              <span className="font-[700px] text-[20px] text-p_yello outlin py-0.5 px-1 rounded text-white bg-p_yellow rotate-6">
+              <span className="font-[700px] text-[20px] py-0.5 px-1 rounded text-white bg-p_yellow rotate-6">
                 Rising Stars
               </span>{" "}
               – Where Little Minds Shine Bright!
             </h2>
-            <h3 className="para font-[500] text-[19px] pb-8">
+            <h3 className="para font-[500] text-[19px] md:pb-8 pb-6">
               To foster a <span className="text-p_red">love for learning,</span>{" "}
               spark imagination, and help every child become kind,{" "}
               <span className="text-p_blue">confident </span>
@@ -177,10 +177,10 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 , scale:0.6}}
+          initial={{ opacity: 0, scale: 0.6 }}
           whileInView={{
             opacity: 1,
-            scale:1,
+            scale: 1,
             transition: {
               duration: 0.8,
             },
@@ -199,21 +199,24 @@ export default function Home() {
       </section>
 
       {/* PROGRAMMS */}
-      <section id="programms" className="my-28 relative text-p_red text-center">
-        <h1 className="heading pb-3 text-5xl">Programms</h1>
+      <section
+        id="programms"
+        className="md:my-28 my-16 relative text-p_red text-center"
+      >
+        <h1 className="heading md:pb-3 text-4xl md:text-5xl">Programms</h1>
         <Image
           src={"/svg/Park Swing.svg"}
           width={"80"}
           height={"100"}
           alt="paintbrush"
-          className="absolute left-10 bottom-12 opacity-65"
+          className="absolute md:left-10 md:bottom-12 bottom-[945px] opacity-65"
         />
         <Image
           src={"/svg/Basketball.svg"}
           width={"120"}
           height={"100"}
           alt="paintbrush"
-          className="absolute right-[450px] top-8 opacity-65"
+          className="absolute bottom-[430px] -right-4 md:right-[450px] md:top-8 opacity-65"
         />
 
         <svg
@@ -228,7 +231,7 @@ export default function Home() {
           ></path>
         </svg>
 
-        <div className="flex relative w-fit my-12 gap-10 mx-auto">
+        <div className="flex md:flex-row max-sm:mx-6 flex-col relative w-fit md:my-12 my-6 gap-4 md:gap-10 mx-auto">
           {[
             {
               id: 1,
@@ -270,8 +273,13 @@ export default function Home() {
 
       {/* WHY */}
 
-      <section id="why" className="my-20 relative text-p_red text-center">
-        <h1 className="heading pb-3 text-5xl capitalize">why choose us</h1>
+      <section
+        id="why"
+        className="md:my-20 my-12 relative text-p_red text-center"
+      >
+        <h1 className="heading max-sm:pb-3 text-4xl md:text-5xl capitalize">
+          why choose us
+        </h1>
         <h2 className="sub-heading text-lg ">
           A nurturing start makes all the difference. Here’s why parents trust
           us with their child’s early learning journey:
@@ -281,19 +289,19 @@ export default function Home() {
           width={"300"}
           height={"200"}
           alt="paintbrush"
-          className="absolute left-10 top-12 opacity-65"
+          className="max-sm:hidden absolute left-10 top-12 opacity-65"
         />
 
-        <div className="flex items-baseline relative w-fit my-12 gap-16 mx-auto">
+        <div className="flex md:flex-row *:flex *:flex-col *:items-center  flex-col mx-12 justify-center items-center md:items-baseline relative md:w-fit my-12 gap-6 md:gap-16 md:mx-auto">
           {/* D1 */}
-          <div className="max-w-[250px]">
-            <div className="bg-p_yellow  outline-offset-8 rotate-6 outline-dashed outline-p_yellow p-2">
+          <div className="md:max-w-[250px] ">
+            <div className="bg-p_yellow max-sm:max-w-[200px]  outline-offset-8 rotate-6 outline-dashed outline-p_yellow p-2">
               <Image
                 src={"/images/lib.png"}
                 width={200}
                 height={200}
                 alt="w1"
-                className="w-full"
+                className="w-full max-sm:w-[200px]"
               />
             </div>
             <div className="my-4 ">
@@ -307,7 +315,7 @@ export default function Home() {
             </div>
           </div>
           {/* D2 */}
-          <div className="max-w-[250px]">
+          <div className="md:max-w-[250px]">
             <div className="bg-p_green w-[220px] h-[220px] rounded-full overflow-hidden  outline-offset-8 rotate-[23deg] otline-dashed outline-p_green p-2">
               <Image
                 src={"/images/lib.png"}
@@ -328,8 +336,8 @@ export default function Home() {
             </div>
           </div>
           {/* D3 */}
-          <div className="max-w-[250px]">
-            <div className="bg-p_blue h-[190px]  outline-offset-8 -rotate-6 outline-dashed outline-p_blue p-2">
+          <div className="md:max-w-[250px]">
+            <div className="bg-p_blue h-[190px]  max-sm:max-w-[200px]   outline-offset-8 -rotate-6 outline-dashed outline-p_blue p-2">
               <Image
                 src={"/images/lib.png"}
                 width={200}
@@ -349,9 +357,9 @@ export default function Home() {
             </div>
           </div>
           {/* D4 */}
-          <div className="max-w-[250px]">
+          <div className="md:max-w-[250px]">
             <div
-              className="px-4 relative py-2  rotate-6 bg-p_yellow"
+              className="px-4 relative py-2  max-sm:max-w-[220px]   rotate-6 bg-p_yellow"
               style={{
                 clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
               }}
@@ -387,8 +395,11 @@ export default function Home() {
       </section>
 
       {/* FAQs */}
-      <section id="faq" className="space-y-4 my-20 relative">
-        <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
+      <section
+        id="faq"
+        className="space-y-4 md:my-20 max-sm:mx-4 my-12 relative"
+      >
+        <h1 className="heading text-p_red text-center my-3 md:pb-3 text-4xl md:text-5xl capitalize">
           FAQs
         </h1>
         <Image
@@ -396,7 +407,7 @@ export default function Home() {
           width={200}
           height={200}
           alt="cubes"
-          className="absolute bottom-10 opacity-60  right-12"
+          className="absolute md:bottom-10 -top-14 opacity-60 -right-6 max-sm:w-[150px]  md:right-12"
         />
 
         <AccordionUsage
@@ -436,27 +447,38 @@ export default function Home() {
           width={"600"}
           height={"200"}
           alt="paintbrush"
-          className="absolute w-full left-0 bottom-29 opacity-65"
+          className="absolute w-full left-0 md:bottom-29 max-sm:bottom-48 opacity-65"
         />
-        <div className="absolute top-28 left-48  para text-xl text-white bg-p_yellow p-4 rounded-2xl -rotate-12">
+        <div className="absolute top-5 left-0 md:top-28 md:left-48  para md:text-xl text-white bg-p_yellow md:p-4 p-2 rounded-2xl -rotate-12">
           Call Us: +91-9876543210
         </div>
-        <div className="absolute top-28 right-48 heading text-6xl bg-white rounded-full p-6 w-[90px] flex justify-center items-center h-[90px] text-p_blue font-bold">
+        <div className="absolute max-sm:hidden top-28 right-48 heading text-6xl bg-white rounded-full p-6 w-[90px] flex justify-center items-center h-[90px] text-p_blue font-bold">
           +
         </div>
-        <Image
-          src={"/images/grp.png"}
-          width={"700"}
-          height={"200"}
-          alt="paintbrush"
-          className="relative z-10"
-        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.6 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 0.8,
+            },
+          }}
+        >
+          <Image
+            src={"/images/grp.png"}
+            width={"700"}
+            height={"200"}
+            alt="paintbrush"
+            className="relative z-10"
+          />
+        </motion.div>
 
         <motion.div
           variants={yVariant}
           initial="initial"
           whileInView="animate"
-          className="sub-heading text-xl max-w-3xl text-center relative"
+          className="sub-heading md:text-xl max-w-3xl text-center relative"
         >
           <motion.h2 variants={yVariant}>
             Give your little one the perfect start with fun-filled activities,
@@ -472,8 +494,8 @@ export default function Home() {
       </section>
 
       {/* FORM */}
-      <section id="form" className="bg- relative py-10">
-        <h1 className="heading text-p_red text-center my-3 pb-3 text-5xl capitalize">
+      <section id="form" className="relative md:py-10 max-sm:mx-4">
+        <h1 className="heading text-p_red text-center my-3 pb-3 text-4xl md:text-5xl capitalize">
           Ask your queries
         </h1>
 
@@ -483,14 +505,14 @@ export default function Home() {
           width={200}
           height={200}
           alt="cubes"
-          className="absolute bottom-5 opacity-60  left-12"
+          className="absolute md:bottom-5 bottom-0 max-sm:w-[100px] opacity-60  left-12"
         />
         <Image
           src={"/images/kids.png"}
           width={200}
           height={200}
           alt="cubes"
-          className="absolute top-5 opacity-65  right-0 rotate-6"
+          className="absolute md:top-5  -top-20 max-sm:w-[100px] opacity-65  right-0 rotate-6"
         />
       </section>
     </main>
