@@ -55,7 +55,7 @@ export default function Home() {
           width={120}
           height={200}
           alt="wave-svg"
-          className="max-sm:w-[85px] opacity-70" // Increased height
+          className="max-sm:w-[85px] opacity-70 justify-start" // Increased height
         />
       </div>
       <div className="rotate-12 max-sm:hidden md:top-60 md:right-20 absolute">
@@ -91,11 +91,10 @@ export default function Home() {
           className="max-w-[550px] text-p_white text-center md:text-left"
         >
           <h1 className="heading md:text-5xl max-sm:text-4xl">
-            Build Stunning Websites with Ease
+            Building Bright Futures
           </h1>
           <p className="mt-3 text-lg sub-heading">
-            Power up your creativity with modern tools and pre-built components
-            that scale with your ideas.
+          Welcome to Rising Star Pre-School, where young minds flourish in a secure, nurturing environment. Our CCTV-monitored classrooms give parents peace of mind while their children explore, learn, and grow. Now accepting admissions from Pre-Nursery to 2nd Grade with no admission fee!
           </p>
 
           {/* CTA Buttons */}
@@ -306,11 +305,10 @@ export default function Home() {
             </div>
             <div className="my-4 ">
               <h2 className="sub-heading text-lg text-dark_text">
-                Experienced & Caring Educators
+                Transparent Caregiving
               </h2>
               <p className="text-dark_text/80 para">
-                Our certified teachers specialize in early childhood education,
-                creating engaging, loving classrooms that feel like home.
+                Live CCTV access for parents to stay connected throughout the day
               </p>
             </div>
           </div>
@@ -327,11 +325,10 @@ export default function Home() {
             </div>
             <div className="my-5 ">
               <h2 className="sub-heading text-lg text-dark_text">
-                Experienced & Caring Educators
+                Comprehensive Facilities
               </h2>
               <p className="text-dark_text/80 para">
-                Our certified teachers specialize in early childhood education,
-                creating engaging, loving classrooms that feel like home.
+                Transportation, air-conditioned classrooms, smart classes, indoor/outdoor play areas
               </p>
             </div>
           </div>
@@ -348,11 +345,10 @@ export default function Home() {
             </div>
             <div className="my-5 ">
               <h2 className="sub-heading text-lg text-dark_text">
-                Experienced & Caring Educators
+                Skill Development
               </h2>
               <p className="text-dark_text/80 para">
-                Our certified teachers specialize in early childhood education,
-                creating engaging, loving classrooms that feel like home.
+                Extracurricular activities including skating, clay pottery, and taekwondo
               </p>
             </div>
           </div>
@@ -383,11 +379,10 @@ export default function Home() {
 
             <div className="my-4 ">
               <h2 className="sub-heading text-lg text-dark_text">
-                Experienced & Caring Educators
+                Dedicated Spaces
               </h2>
               <p className="text-dark_text/80 para">
-                Our certified teachers specialize in early childhood education,
-                creating engaging, loving classrooms that feel like home.
+                Caring staff trained in early childhood education
               </p>
             </div>
           </div>
@@ -411,29 +406,29 @@ export default function Home() {
         />
 
         <AccordionUsage
-          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ques={"What safety measures does Rising Star implement?"}
           ans={
-            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+            "Our comprehensive safety system includes 24/7 CCTV surveillance, trained staff and secure entry protocols"
           }
         />
         <AccordionUsage
-          ques={"Are the educators at Kidzee qualified and experienced?"}
+          ques={"What are your operating hours?"}
           ans={
-            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
+            "We operate from 8:00 AM to 3:00 PM, Monday through Friday, with flexible daycare options available."
           }
         />
         <AccordionUsage
+          ques={"What is your teacher-to-student ratio?"}
+          ans={
+            "We maintain low teacher-to-student ratios to ensure personalized attention and care for every child."
+          }
+        />
+        {/* <AccordionUsage
           ques={"Are the educators at Kidzee qualified and experienced?"}
           ans={
             "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
           }
-        />
-        <AccordionUsage
-          ques={"Are the educators at Kidzee qualified and experienced?"}
-          ans={
-            "Yes, Kidzee educators are certified professionals with extensive experience in early childhood education. We maintain a low teacher-student ratio to ensure personalized attention."
-          }
-        />
+        /> */}
       </section>
 
       {/* CTA */}
