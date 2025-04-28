@@ -23,16 +23,16 @@ function ProgramCard({ card, id }) {
           className="mx-auto py-2"
         />
       </div>
-      <div className="-mt-20 text-start p-3 ">
+      <div className="flex-1 -mt-20 text-start p-3 ">
         <h2 className="sub-heading text-[18px]">{card.title}</h2>
         <h2 className="para text-light_text text-[15px]">{card.dec}</h2>
         <h4 className="bg-p_green text-white px-2.5 py-1 w-fit text-sm my-2 rounded-full">
           <span>{card.age} yrs</span>
         </h4>
-        <button className="w-full px-6 py-2 bg-p_yello bg-blue-400 hover:bg-blue-500 text-p_white font-semibold rounded-xl transition">
+      </div>
+        <button className=" px-6 py-2 mb-3 mx-2 bg-p_yello bg-blue-400 hover:bg-blue-500 text-p_white font-semibold rounded-xl transition">
           Read more
         </button>
-      </div>
     </div>
   );
 }

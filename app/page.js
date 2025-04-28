@@ -132,7 +132,7 @@ export default function Home() {
           width={"80"}
           height={"100"}
           alt="paintbrush"
-          className="absolute max-sm:w-[50px] right-0  md:-left-16 md:top-10 top-0 opacity-70"
+          className="absolute max-sm:w-[50px] right-0  md:-left-16 md:top-20 top-0 opacity-10 "
         />
 
         <motion.div
@@ -163,13 +163,13 @@ export default function Home() {
             </h3>
             <ul className="para text-[18px] space-y-3">
               <li>
-                📚 A well-rounded curriculum blending academics, arts, and play
+                📚 Foundation for lifelong learning through play-based education and personalized attention
               </li>
               <li>
-                🧠 Focus on social-emotional development and confidence-building{" "}
+                🧠 Experienced educators fostering creativity, critical thinking, and social skills{" "}
               </li>
               <li>
-                🏃 Engaging indoor and outdoor activities for physical growth{" "}
+                🏃 Balanced curriculum combining academics with engaging extracurricular activities{" "}
               </li>
               <li>🧩 Small class sizes for personalized attention </li>
             </ul>
@@ -235,34 +235,34 @@ export default function Home() {
           {[
             {
               id: 1,
-              title: "Pre-Nursery – A Joyful Start to Learning",
+              title: "Pre-Nursery",
               icon: "/svg/Kids.svg",
-              dec: "Introduce your little one to a world of wonder and discovery! Our Pre-Nursery program encourages play-based learning, language development, and social interaction in a safe, loving environment.",
-              age: "Age 2–3",
+              dec: "Sensory exploration, language development, and social interaction in a playful setting",
+              age: "(2-3 years)",
               image: "/images/reading.png",
             },
             {
               id: 2,
-              title: "Pre-Nursery – A Joyful Start to Learning",
+              title: "Nursery",
               icon: "/svg/Kids.svg",
-              dec: "Introduce your little one to a world of wonder and discovery! Our Pre-Nursery program encourages play-based learning, language development, and social interaction in a safe, loving environment.",
-              age: "Age 2–3",
+              dec: "Enhanced cognitive development through structured play and foundational concepts",
+              age: "(3-4 years)",
               image: "/images/reading.png",
             },
             {
               id: 3,
-              title: "Pre-Nursery – A Joyful Start to Learning",
+              title: "Kindergarten ",
               icon: "/svg/Kids.svg",
-              dec: "Introduce your little one to a world of wonder and discovery! Our Pre-Nursery program encourages play-based learning, language development, and social interaction in a safe, loving environment.",
-              age: "Age 2–3",
+              dec: "Reading readiness, number concepts, and creative expression \n",
+              age: "(4-5 years)",
               image: "/images/reading.png",
             },
             {
               id: 4,
-              title: "Pre-Nursery – A Joyful Start to Learning",
+              title: "Primary School",
               icon: "/svg/Kids.svg",
-              dec: "Introduce your little one to a world of wonder and discovery! Our Pre-Nursery program encourages play-based learning, language development, and social interaction in a safe, loving environment.",
-              age: "Age 2–3",
+              dec: "Curriculum-based learning with personalized attention and activity-based teaching",
+              age: "(1st-2nd Grade)",
               image: "/images/reading.png",
             },
           ].map((card) => (
